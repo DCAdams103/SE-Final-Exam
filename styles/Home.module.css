@@ -2,14 +2,34 @@
   padding: 0 2rem;
 }
 
+.navbar {
+  margin-top: 7vh;
+  background-color: #5789A6;
+  border-radius: 15px;
+}
+
+.navItem {
+  padding-top: 1% !important;
+}
+
+.carouselDiv {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.carousel {
+  width: 50%;
+}
+
 .main {
   min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding: 0;
   align-items: center;
+  justify-content: center;
+  
+  text-align: center;
 }
 
 .footer {
