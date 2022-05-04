@@ -1,11 +1,34 @@
 import { Container, Grid, TextField, Divider } from '@mui/material'
 import Head from 'next/head'
 import Image from 'next/image'
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
+import React from 'react';
+import "react-responsive-carousel/lib/styles/carousel.min.css"
+import { Carousel } from 'react-responsive-carousel'
 import styles from '../styles/Home.module.css'
+import {ItemBox} from '../components/item'
+import { styled } from '@mui/material/styles';
+import Drawer from 'react-modern-drawer'
 
-export default function Home() {
+const CssTextField = styled(TextField)({
+  '& label.Mui-focused': {
+    color: 'lightgrey',
+  },
+  '& .MuiOutlinedInput-root': {
+    '&.Mui-focused fieldset': {
+      borderColor: 'lightgrey',
+    },
+  },
+});
+
+const Home = () => {
+
+
+  const [isOpen, setIsOpen] = React.useState(false)
+
+  const toggleDrawer = () => {
+      setIsOpen((prevState) => !prevState)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,7 +41,7 @@ export default function Home() {
         <Grid container spacing={5} direction="row" alignItems="center" >
 
           <Grid item className={styles.navItem}>
-            <Image src="/menu.png" alt="Menu Button" width={36} height={36} />
+            <Image src="/menu.png" alt="Shop Logo" width={36} height={36} />
           </Grid>
 
           <Grid item className={styles.navItem}>
@@ -33,7 +56,7 @@ export default function Home() {
             <Container>
               <Grid container spacing={1} direction="row" alignItems="center" >
                 <Grid item xs={6}>
-                  <TextField id='Search' size='small' fullWidth label='search' variant='outlined' className={styles.searchbar}/>
+                  <CssTextField size='small' label="Search for products" id="custom-css-outlined-input" />
                 </Grid>
                 <Grid item>
                   <Image src="/search.png" alt="Menu Button" width={36} height={36} />
@@ -88,22 +111,40 @@ export default function Home() {
           </Carousel>
         </div>
         
+        <Divider sx={{ borderBottomWidth: 5 }} />
 
+        <Container>
+
+        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item xs={6}>
+            <ItemBox />
+          </Grid>
+          <Grid item xs={6}>
+            <ItemBox />
+          </Grid>
+          <Grid item xs={6}>
+            <ItemBox />
+          </Grid>
+          <Grid item xs={6}>
+            <ItemBox />
+          </Grid>
+          <Grid item xs={6}>
+            <ItemBox />
+          </Grid>
+          <Grid item xs={6}>
+            <ItemBox />
+          </Grid>
+        </Grid>
+
+        </Container>
+
+        <br />
+        <br />
+        <br />
 
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
+
+export default Home;

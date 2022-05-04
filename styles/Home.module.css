@@ -23,6 +23,10 @@
   width: 50%;
 }
 
+.itemPhoto {
+  padding-top: 2%;
+}
+
 .main {
   min-height: 100vh;
   padding: 0;
