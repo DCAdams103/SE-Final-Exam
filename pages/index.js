@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>SE Final Exxam</title>
+        <title>Techazon</title>
         <meta name="description" content="Software Engineering Final Exam Part 2 Front-end" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -49,7 +49,7 @@ const Home = () => {
           </Grid>
 
           <Grid item className={styles.navItem}>
-            <p>Online Store</p>
+            <p>Techazon</p>
           </Grid>
 
           <Grid item xs={6} className={styles.navItem}>
